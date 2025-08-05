@@ -1,28 +1,37 @@
 import React from "react";
+import Profile from "./profile"; 
+import Soccer from "./Soccer";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+const name = "Britney";
+const team1 = "Manchester"
+const team2 ="Real Madrid"
+const team3 = "Chelsea"
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
+const myArray = ["names", "ronaldo", "messi"]
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+const Home = () =>{
+	return(
+		<div>
+			{myArray.map(
+				(name)=> {
+					return(
+						<div>
+							{name}
+						</div>
+					)
+				}
+			)}
+			<h1>Hi, {name}</h1>
+			<h2>Who is the better team?</h2>
+			<div class="Soccer">
+				<Soccer 
+				team1Prop = {team1} 
+				team2Prop = {team2} 
+				team3Prop = {team3}/>
+
+			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
